@@ -1,3 +1,3 @@
 # movies-explorer-api
 
-Домен бэкенда: https://movies.bulgakovd.nomoredomains.monster
+Домен бэкенда: https://api.movies.bulgakovd.nomoredomains.club
