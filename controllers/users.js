@@ -8,7 +8,7 @@ const { jwtSecret } = require('../utils/config');
 
 const NotFoundError = require('../errors/NotFoundError');
 const NotValidError = require('../errors/NotValidError');
-const EmailExistsError = require('../errors/EmailExistsError');
+const EmailError = require('../errors/EmailError');
 const AuthorizationError = require('../errors/AuthorizationError');
 
 const {
@@ -16,6 +16,7 @@ const {
   BAD_REQUEST,
   NO_AUTH,
   EMAIL_EXISTS,
+  EMAIL_WRONG,
 } = require('../utils/errorMessage');
 
 const { CAST_ERROR, VALID_ERROR, MONGO_ERROR } = require('../utils/errorName');
@@ -63,6 +64,8 @@ const updateUser = (req, res, next) => {
     .catch((err) => {
       if (err.name === VALID_ERROR) {
         throw new NotValidError(BAD_REQUEST);
+      } else if (err.name === MONGO_ERROR && err.code === 11000) {
+        throw new EmailError(EMAIL_WRONG);
       }
 
       return next(err);
@@ -89,7 +92,7 @@ const register = (req, res, next) => {
           if (err.name === VALID_ERROR) {
             throw new NotValidError(BAD_REQUEST);
           } else if (err.name === MONGO_ERROR && err.code === 11000) {
-            throw new EmailExistsError(EMAIL_EXISTS);
+            throw new EmailError(EMAIL_EXISTS);
           }
 
           next(err);

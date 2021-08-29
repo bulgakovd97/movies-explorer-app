@@ -10,6 +10,10 @@ const userRouter = require('./users');
 
 const movieRouter = require('./movies');
 
+const NotFoundError = require('../errors/NotFoundError');
+
+const { ROUTE_WRONG } = require('../utils/errorMessage');
+
 
 router.post('/signup', registerValid, register);
 
@@ -22,9 +26,7 @@ router.use('/', userRouter);
 router.use('/', movieRouter);
 
 router.use('*', (req, res, next) => {
-  res.status(404).send({ message: 'Маршрут не найден' });
-
-  return next();
+  next(new NotFoundError(ROUTE_WRONG));
 });
 
 

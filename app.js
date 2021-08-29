@@ -35,9 +35,9 @@ mongoose.connect(baseUrl, {
 });
 
 
-app.use(limiter);
-
 app.use(requestLogger);
+
+app.use(limiter);
 
 app.use(helmet());
 
