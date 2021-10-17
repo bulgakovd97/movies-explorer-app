@@ -1,5 +1,7 @@
 const Movie = require('../models/movie');
 
+const moviesUrl = require('../utils/moviesUrl');
+
 const NoAccessError = require('../errors/NoAccessError');
 const NotFoundError = require('../errors/NotFoundError');
 const NotValidError = require('../errors/NotValidError');
@@ -24,9 +26,9 @@ const createMovie = (req, res, next) => {
     year,
     description,
     image,
-    trailer,
+    trailerLink,
     thumbnail,
-    movieId,
+    id,
     nameRU,
     nameEN,
   } = req.body;
@@ -37,10 +39,10 @@ const createMovie = (req, res, next) => {
     duration,
     year,
     description,
-    image,
-    trailer,
+    image: moviesUrl + image.url,
+    trailerLink,
     thumbnail,
-    movieId,
+    id,
     nameRU,
     nameEN,
     owner: req.user._id,
@@ -57,9 +59,9 @@ const createMovie = (req, res, next) => {
 };
 
 const deleteMovie = (req, res, next) => {
-  const { movieId } = req.params;
+  const { id } = req.params;
 
-  Movie.findById(movieId)
+  Movie.findById(id)
     .then((movie) => {
       if (!movie) {
         throw new NotFoundError(NOT_FOUND);
@@ -67,7 +69,7 @@ const deleteMovie = (req, res, next) => {
         throw new NoAccessError(NO_ACCESS);
       }
 
-      return Movie.deleteOne({ _id: movie._id })
+      return Movie.deleteOne({ id: movie.id })
         .then((movie) => res.status(200).send(movie))
         .catch(next);
     })

@@ -33,9 +33,9 @@ const createMovieValid = celebrate({
     year: Joi.string().required(),
     description: Joi.string().required(),
     image: Joi.string().required().pattern(regex),
-    trailer: Joi.string().required().pattern(regex),
+    trailerLink: Joi.string().required().pattern(regex),
     thumbnail: Joi.string().required().pattern(regex),
-    movieId: Joi.number().required(),
+    id: Joi.number().required(),
     nameRU: Joi.string().required(),
     nameEN: Joi.string().required(),
   }).unknown(true),
@@ -43,7 +43,7 @@ const createMovieValid = celebrate({
 
 const deleteMovieValid = celebrate({
   params: Joi.object().keys({
-    movieId: Joi.string().alphanum().length(24),
+    id: Joi.string().alphanum().length(24),
   }).unknown(true),
 });
 

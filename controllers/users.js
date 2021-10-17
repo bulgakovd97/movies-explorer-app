@@ -44,11 +44,11 @@ const getUser = (req, res, next) => {
 };
 
 const updateUser = (req, res, next) => {
-  const { email, name } = req.body;
+  const { name, email } = req.body;
 
   User.findByIdAndUpdate(
     req.user._id,
-    { email, name },
+    { name, email },
     {
       new: true,
       runValidators: true,
@@ -87,7 +87,7 @@ const register = (req, res, next) => {
         password: hash,
         name,
       })
-        .then((user) => res.status(200).send({ email, name }))
+        .then(() => res.status(200).send({ email, name }))
         .catch((err) => {
           if (err.name === VALID_ERROR) {
             throw new NotValidError(BAD_REQUEST);
@@ -96,9 +96,9 @@ const register = (req, res, next) => {
           }
 
           next(err);
-        })
-        .catch(next);
-    });
+        });
+    })
+    .catch(next);
 };
 
 const login = (req, res, next) => {

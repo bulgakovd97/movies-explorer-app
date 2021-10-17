@@ -22,6 +22,8 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const errorHandler = require('./middlewares/errorHandler');
 
+const { corsHandler } = require('./middlewares/corsHandler');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,9 +37,11 @@ mongoose.connect(baseUrl, {
 });
 
 
+app.use(corsHandler);
+
 app.use(requestLogger);
 
-app.use(limiter);
+// app.use(limiter);
 
 app.use(helmet());
 
