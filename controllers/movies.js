@@ -1,7 +1,5 @@
 const Movie = require('../models/movie');
 
-const moviesUrl = require('../utils/moviesUrl');
-
 const NoAccessError = require('../errors/NoAccessError');
 const NotFoundError = require('../errors/NotFoundError');
 const NotValidError = require('../errors/NotValidError');
@@ -39,7 +37,7 @@ const createMovie = (req, res, next) => {
     duration,
     year,
     description,
-    image: moviesUrl + image.url,
+    image,
     trailerLink,
     thumbnail,
     id,
@@ -59,9 +57,7 @@ const createMovie = (req, res, next) => {
 };
 
 const deleteMovie = (req, res, next) => {
-  const { id } = req.params;
-
-  Movie.findById(id)
+  Movie.findOne({ id: req.params.id })
     .then((movie) => {
       if (!movie) {
         throw new NotFoundError(NOT_FOUND);
