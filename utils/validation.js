@@ -13,7 +13,7 @@ const updateUserValid = celebrate({
 const registerValid = celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
-    password: Joi.string().required().min(8),
+    password: Joi.string().required().min(8).max(20),
     name: Joi.string().required().min(2).max(30),
   }).unknown(true),
 });
@@ -21,7 +21,7 @@ const registerValid = celebrate({
 const loginValid = celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
-    password: Joi.string().required().min(8),
+    password: Joi.string().required().min(8).max(20),
   }).unknown(true),
 });
 

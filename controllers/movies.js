@@ -1,16 +1,25 @@
 const Movie = require('../models/movie');
 
-const NoAccessError = require('../errors/NoAccessError');
 const NotFoundError = require('../errors/NotFoundError');
 const NotValidError = require('../errors/NotValidError');
 
-const { NOT_FOUND, BAD_REQUEST, NO_ACCESS } = require('../utils/errorMessage');
+const { NOT_FOUND, BAD_REQUEST } = require('../utils/errorMessage');
 const { CAST_ERROR, VALID_ERROR } = require('../utils/errorName');
 
 
 const getMovies = (req, res, next) => {
   Movie.find()
-    .then((movies) => res.send(movies))
+    .then((movies) => {
+      const savedMovies = movies.filter(movie => {
+        if (!movie.owner.equals(req.user._id)) {
+          return null;
+        }
+
+        return movie;
+      });
+
+      res.send(savedMovies);
+    })
     .catch((err) => {
       next(err);
     });
@@ -61,8 +70,6 @@ const deleteMovie = (req, res, next) => {
     .then((movie) => {
       if (!movie) {
         throw new NotFoundError(NOT_FOUND);
-      } else if (!movie.owner.equals(req.user._id)) {
-        throw new NoAccessError(NO_ACCESS);
       }
 
       return Movie.deleteOne({ id: movie.id })
