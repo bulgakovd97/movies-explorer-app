@@ -1,0 +1,117 @@
+.footer {
+    width: 89.0625%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-bottom: 2.605%;
+}
+
+.footer__description {
+    width: 100%;
+    max-width: 320px;
+    margin: 6.943% auto 1.758%;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #8B8B8B;
+}
+
+.footer__columns {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.758%;
+    border-top: 2px solid #424242;
+}
+
+.footer__year {
+    margin:0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.footer__info {
+    
+}
+
+.footer__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__list-item {
+
+}
+
+.footer__link {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    transition: opacity 0.2s linear;
+}
+
+.footer__link:hover {
+    opacity: .7;
+}
+
+
+@media screen and (max-width: 768px) {
+    .footer {
+        width: 92.1875%;
+        max-width: 708px;
+    }
+
+    .footer__description {
+        margin: 11.159% auto 2.825%;
+    }
+
+    .footer__columns {
+        padding-top: 2.825%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .footer {
+        width: 93.75%;
+        max-width: 290px;
+    }
+    
+    .footer__description {
+        font-size: 12px;
+        line-height: 15px;
+        margin: 27.245% auto 7.245%;
+    }
+
+    .footer__columns {
+        padding-top: 10.345%;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .footer__link {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .footer__year {
+        font-size: 12px;
+        line-height: 15px;
+        color: #8B8B8B;
+    }
+}

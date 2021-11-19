@@ -1,0 +1,85 @@
+.tooltip {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  padding: 0 calc((100vw - 430px)/2);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s linear, opacity 0.2s linear;
+}
+
+.tooltip_opened {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.2s linear, opacity 0.2s linear;
+}
+
+.tooltip__container {
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 430px;
+  padding: 34px 36px;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: calc(100vh / 2 - 25%);
+}
+
+.tooltip__text {
+  padding: 0;
+  margin: 0;
+  color: #202020;
+  font-weight: 900;
+  font-size: 24px;
+  text-align: center;
+}
+
+.tooltip__close-button {
+  background-image: url('../../images/close-button.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+  transition: opacity 0.2s linear;
+}
+
+.tooltip__close-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1045px) {
+  .tooltip__close-button {
+      background-size: cover;
+      top: -32px;
+      right: -32px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .tooltip__close-button {
+      top: -50px;
+      right: -1px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .tooltip {
+      padding: 0 5.9375%;
+      align-items: flex-start;
+  }
+}

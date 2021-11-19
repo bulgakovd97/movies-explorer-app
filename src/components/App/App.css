@@ -1,0 +1,32 @@
+.app {
+    background-color: #202020;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    max-width: 1280px;
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container {
+    width: 89.0625%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 86.98%;
+    }    
+}
+
+@media screen and (max-width: 320px) {
+    .container {
+        width: 91.25%;
+    }
+}

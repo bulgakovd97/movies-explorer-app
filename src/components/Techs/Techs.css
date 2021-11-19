@@ -1,0 +1,141 @@
+.techs {
+    width: 100%;
+    background-color: #272727;
+    padding: 7.8125% 5.46875% 4.609375%;
+    box-sizing: border-box;
+}
+
+.techs__heading {
+    width: 52.55%;
+    color: #fff;
+    padding: 0;
+    margin: 7.909% auto 2.285%;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 116%;
+    text-align: center;
+    letter-spacing: -0.04em;
+}
+
+.techs__text {
+    width: 40.247%;
+    color: #fff;
+    padding: 0;
+    margin: 0 auto 8.788%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 143%;
+    text-align: center;
+    letter-spacing: -0.04em;
+}
+
+.techs__list {
+    max-width: 690px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.techs__list-item {
+    width: 100%;
+}
+
+.techs__tech {
+    background-color: #303030;
+    width: 100%;
+    padding: 25.34% 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 121.43%;
+    color: #fff;
+}
+
+
+@media screen and (max-width: 768px) {
+    .techs {
+        padding-top: 11.72%;
+        padding-bottom: 11.72%;
+        padding-left: 6.512%;
+        padding-right: 6.512%;
+    }
+
+    .techs__heading {
+        width: 89.82%;
+        margin-top: 11.977%;
+        margin-bottom: 3.295%;
+    }
+
+    .techs__text {
+        width: 68.863%;
+        font-size: 12px;
+        line-height: 150%;
+        margin-bottom: 12.426%;
+    }
+
+    .techs__list {
+        max-width: 648px;
+        width: 100%;
+    }
+
+    .techs__tech {
+        padding: 25.36% 0;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .techs__heading {
+        width: 100%;
+        max-width: 284px;
+        margin-top: 21.13%;
+        margin-bottom: 8.452%;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .techs__text {
+        width: 100%;
+        font-size: 11px;
+        line-height: 145%;
+        margin-bottom: 17.61%;
+    }
+
+    .techs__list {
+        display: grid;
+        width: 178px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .techs {
+        padding-top: 21.878%;
+        padding-bottom: 21.878%;
+        padding-left: 5.625%;
+        padding-right: 5.625%;
+        background-color: #202020;
+    }
+
+    .techs__heading {
+        width: 100%;
+        max-width: 284px;
+        margin-top: 21.13%;
+        margin-bottom: 8.452%;
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    .techs__text {
+        width: 100%;
+        font-size: 11px;
+        line-height: 145%;
+        margin-bottom: 17.61%;
+    }
+}

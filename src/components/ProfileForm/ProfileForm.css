@@ -1,0 +1,145 @@
+.profile-form {
+    outline: none;
+}
+
+.profile-form__fieldset {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.profile-form__label {
+    margin-top: 6px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #8B8B8B;
+}
+
+.profile-form__label:first-of-type {
+    margin-top: 0;
+}
+
+.profile-form__input {
+    border: none;
+    border-bottom: 1px solid #424242;
+    max-width: 100%;
+    padding: 0 0 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    background-color: #202020;
+    outline: none;
+}
+
+.profile-form__input::-webkit-input-placeholder {
+    color: #c4c4c4;
+}
+  
+.profile-form__input::-moz-placeholder {
+    color: #c4c4c4;
+}
+
+.profile-form__input:focus {
+    border-bottom: 1px solid #4285F4;
+}
+
+.profile-form__input_type_password {
+    color: #EE3465;
+}
+
+.profile-form__error {
+    visibility: hidden;
+    margin-top: 6px;
+    min-height: 24px;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+}
+
+.profile-form__error_visible {
+    visibility: visible;
+}
+
+.profile-form__button {
+    max-width: 100%;
+    height: 45px;
+    background-color: #4285F4;
+    border: none;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #ffffff;
+    padding: 0;
+    box-sizing: border-box;
+    transition: opacity 0.2s linear;
+}
+
+.profile-form__button:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.profile-form__button_disabled {
+    background-color: #424242;
+    opacity: .2;
+    color: #c2c2c2;
+}
+
+.profile-form__button_disabled:hover {
+    cursor: auto;
+    opacity: .2;
+}
+
+.profile-form__caption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.profile-form__caption-text {
+    padding: 0;
+    margin: 0;
+    color: #8B8B8B;
+}
+
+.profile-form__caption-link {
+    text-decoration: none;
+    color: #4285F4;
+    margin-left: 6px;
+    transition: opacity 0.2s linear;
+}
+
+.profile-form__caption-link:hover {
+    opacity: .7;
+}
+
+
+@media screen and (max-width: 490px) {
+    .profile-form__button {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .profile-form__caption {
+        font-size: 12px;
+        line-height: 15px;
+        margin-top: 14px;
+    }
+
+    .profile-form__caption-link {
+        margin-left: 7px;
+    }
+}

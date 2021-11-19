@@ -1,0 +1,333 @@
+.nav-section {
+    
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation__register {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 133%;
+    margin-right: 30px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation__register:hover {
+    opacity: .7;
+}
+
+.navigation__login-background {
+    background-color: #3DDC84;
+    width: 76px;
+    height: 32px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s linear;
+}
+
+.navigation__login-background:hover {
+    opacity: .8;
+}
+
+.navigation__login {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 133%;
+}
+
+.navigation-auth {
+    display: flex;
+    width: 92.795%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation__movies {
+
+}
+
+.navigation__all-movies {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 16px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation__all-movies:hover {
+    opacity: 0.7;
+}
+
+.navigation__all-movies_selected {
+    font-weight: 500;
+}
+
+.navigation__saved-movies {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation__saved-movies:hover {
+    opacity: .7;
+}
+
+.navigation__saved-movies_selected {
+    font-weight: 500;
+}
+
+.navigation__account-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 17px;
+}
+
+.navigation__account {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation__account:hover {
+    opacity: .7;
+}
+
+.navigation__account-icon {
+    background-image: url('../../images/account-icon.svg');
+    width: 26px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #313131;
+    border-radius: 4px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation__account-icon:hover {
+    opacity: .7;
+}
+
+.navigation-auth-burger {
+    display: none;
+    background-image: url('../../images/menu-burger.svg');
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    transition: opacity 0.2s linear;
+}
+
+.navigation-auth-burger:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+.navigation-auth__popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    z-index: 1;
+    width: 67.709%;
+    max-width: 520px;
+    opacity: 0;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+
+.navigation-auth__popup_opened {
+    visibility: visible;
+    opacity: 1;
+}
+
+.navigation-auth-burger__container {
+    background-color: #202020;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navigation-auth__close-button {
+    background-image: url('../../images/close.svg');
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    padding: 0;
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation-auth__close-button:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.navigation-auth__movies {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    padding: 159px 0 45vh;
+}
+
+.navigation-auth__main-page {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation-auth__main-page:hover {
+    opacity: .7;
+}
+
+.navigation-auth__main-page_selected {
+    font-weight: 500;
+}
+
+.navigation-auth__all-movies {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation-auth__all-movies:hover {
+    opacity: .7;
+}
+
+.navigation-auth__all-movies_selected {
+    font-weight: 500;
+}
+
+.navigation-auth__saved-movies {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation-auth__saved-movies:hover {
+    opacity: .7;
+}
+
+.navigation-auth__saved-movies_selected {
+    font-weight: 500;
+}
+
+.navigation-auth__account-container {
+    display: flex;
+    width: 100px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 17px;
+}
+
+.navigation-auth__account {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    transition: opacity 0.2s linear;
+}
+
+.navigation-auth__account:hover {
+    opacity: .7;
+}
+
+.navigation-auth__account-icon {
+    background-image: url('../../images/account-icon.svg');
+    width: 26px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #313131;
+    border-radius: 4px;
+    transition: opacity 0.2s linear;
+}
+
+.navigation-auth__account-icon:hover {
+    opacity: .7;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navigation-auth {
+        display: none;
+    }
+
+    .navigation-auth-burger {
+        display: block;
+    }
+
+    .navigation-auth__main-page_selected {
+        border-bottom: 2px solid #fff;
+        padding-bottom: 4px;
+    }
+
+    .navigation-auth__all-movies_selected {
+        border-bottom: 2px solid #fff;
+        padding-bottom: 4px;
+    }
+
+    .navigation-auth__saved-movies_selected {
+        border-bottom: 2px solid #fff;
+        padding-bottom: 4px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .navigation-auth__popup {
+        width: 100%;
+    }
+
+    .navigation-auth__movies {
+        padding-top: 144px;
+    }
+
+    .navigation-auth__main-page_selected {
+        padding-bottom: 7px;
+    }
+
+    .navigation-auth__all-movies_selected {
+        padding-bottom: 7px;
+    }
+
+    .navigation-auth__saved-movies_selected {
+        padding-bottom: 7px;
+    }
+}
