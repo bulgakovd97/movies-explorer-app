@@ -270,6 +270,10 @@ const App = () => {
     if (location.pathname === '/saved-movies') {
       getSavedMovies();
     } else if (location.pathname === '/movies') {
+      if (!localStorage.getItem('saved-movies')) {
+        localStorage.setItem('saved-movies', JSON.stringify([]));
+      }
+
       setSavedMovies(JSON.parse(localStorage.getItem('saved-movies')));
     }
   }, [location.pathname]);
@@ -425,9 +429,10 @@ const App = () => {
 
   const logout = () => {
     localStorage.removeItem('jwt');
-    localStorage.setItem('searched-movies', JSON.stringify([]));
+    localStorage.removeItem('movies');
+    localStorage.removeItem('searched-movies');
+    localStorage.removeItem('saved-movies');
     localStorage.removeItem('searched-saved-movies');
-    localStorage.setItem('movies', JSON.stringify([]));
     setIsLoggedIn(false);
     setIsMoviesLoading(true);
     setIsSavedMoviesLoading(true);
